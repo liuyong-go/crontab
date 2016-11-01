@@ -43,7 +43,7 @@ class CronDue
             }else{
                 $satisfied = false;
                 foreach (array_map('trim', explode(',', $part)) as $listPart) {
-                    eval("\$satisfied=\$this->".$evalFunc."(".$listPart.");");
+                    eval("\$satisfied=\$this->".$evalFunc."('".$listPart."');");
                     if($satisfied == true){
                         break;
                     }
